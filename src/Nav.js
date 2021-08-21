@@ -1,7 +1,10 @@
 import React,{useState,useEffect} from 'react'
+import {Link} from 'react-router-dom'
+
 import './Nav.css'
 function Nav() {
-    const[show,setShow]=useState(false)
+   
+ const[show,setShow]=useState(false)
     const transitionnavbar=()=>{
         if(window.scrollY>100){
             setShow(true)
@@ -19,14 +22,20 @@ function Nav() {
     return (
         <div className={`nav ${show && 'nav_black'}`}>
             <div className="nav_contents">
-            <img 
+                <Link to='/'>
+                <img 
             className="nav_logo"
             src="http://assets.stickpng.com/images/580b57fcd9996e24bc43c529.png"
             alt="hello"/>
+                </Link>
+              
+           
+            <Link to="/profile">
             <img
             className="nav_avatar"
             src="https://icon-library.com/images/netflix-icon-transparent/netflix-icon-transparent-29.jpg" alt="hello"/>
-
+           </Link>
+         
             
             </div>
   </div>
