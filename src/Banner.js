@@ -4,23 +4,42 @@ import requests from './request'
 import instance from './axios'
 import './Banner.css'
 
-
-
 function Banner() {
-    function truncate(string,n){
-            return (string.length>150)?string.substring(0,n)+"......":string
-
-}
-    
     const[movie,setMovie]=useState([])
-    useEffect(()=>{
+    const[overview,setOverview]=useState([]);
+   function truncate(string,n){
+            return (string.length>n)?string.substring(0,n)+"......":string
+      }
+     
+     /*var text=movie.overview
+     console.log(typeof(text))
+     var array=text.split("");
+     console.log(array)
+      var myarray=[];
+      var loopbraker;
+     /* function framelooper(){
+          if(array.length>0){
+              myarray=myarray.push(array.shift())
+              setOverview(myarray);
+          }
+          else{
+              clearTimeout(loopbraker)
+          }
+loopbraker=setTimeout(framelooper,1);
+      }
+
+    framelooper()*/
+    
+       useEffect(()=>{
         async function fetchmovie(){
             const data= await axios.get(`${instance}${requests.fetchNetflixOriginals}`)
-           setMovie(data.data.results[Math.floor(Math.random()*data.data.results.length-1)])
-
-
-        }
+            setInterval(function(){
+                setMovie(data.data.results[Math.floor(Math.random()*data.data.results.length-1)])
+            },4000)
+           
+          }
         fetchmovie()
+      
     },[])
     return (
         <header className='banner'
@@ -35,7 +54,7 @@ function Banner() {
             </div>
             <h1 className="banner_description">
                 {
-                    truncate(`${movie?.overview}`,150)
+           truncate(`${movie?.overview}`,150)
                 }
                 </h1>
             </div>

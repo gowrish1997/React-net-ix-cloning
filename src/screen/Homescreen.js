@@ -8,7 +8,7 @@ import Banner from '../Banner'
 function HomeScreen() {
     return (
         <div className="homescreen">
-            <Nav />
+         
            <Banner/> 
            <Row title="netflix originals" fetchurl={requests.fetchNetflixOriginals} islargerow/>
          <Row title="trending now " fetchurl={requests.fetchTrending}/>

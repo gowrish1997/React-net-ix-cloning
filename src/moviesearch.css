@@ -1,0 +1,44 @@
+.Movie_search{
+    background:rgba(0,0,0,0.4)
+    center no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
+.movie_poster{
+    max-height: 200px;
+    object-fit:contain ;
+    margin-right: 10px;
+    border-radius: 20px;
+    border-top: solid 2px aqua;
+    margin-top: 10px;
+   
+
+}
+.movie_posters
+{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.movie_row_poster{
+    background: rgba(0,0,0,0.4);
+     display: flex;
+    flex-direction: row;
+    flex-flow: row wrap ;
+      margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    position: relative;
+    top:70px;
+
+}
+.movie_name{
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+/*.movie_bottom{
+    height: 80px;
+    background: rgba(0,0,0,0.4);
+}*/
